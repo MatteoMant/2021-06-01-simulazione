@@ -1,6 +1,6 @@
 package it.polito.tdp.genes.model;
 
-public class Genes {
+public class Genes implements Comparable<Genes> {
 	
 	private String geneId;
 	private String essential;
@@ -67,8 +67,9 @@ public class Genes {
 		return this.geneId;
 	}
 
-
-	
-	
+	@Override
+	public int compareTo(Genes other) {
+		return this.getGeneId().compareTo(other.getGeneId());
+	}
 
 }
